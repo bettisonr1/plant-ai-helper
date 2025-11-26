@@ -3,7 +3,6 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from typing import Optional, List, Dict
-import json
 from .agents.chat_agent import agent
 
 
@@ -21,9 +20,8 @@ app.add_middleware(
 class ChatMessage(BaseModel):
     message: str
     thread_id: Optional[str] = "default"
-    userId: str
-    # user_plants: Optional[List[str]] = []
-    # user_details: Optional[Dict] = {}
+    user_plants: Optional[List[str]] = []
+    user_details: Optional[Dict] = {}
 
 class ChatResponse(BaseModel):
     content: str

@@ -2,3 +2,4 @@ uvicorn
 fastapi
 langchain
 langchain-openai
+gradio
